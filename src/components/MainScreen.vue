@@ -23,12 +23,11 @@
     </div>
 </template>
 
-<script>
-export default {
-    methods: {
-        onStart(totlalOfBlocks) {
-            this.$emit("onStart", {totlalOfBlocks: totlalOfBlocks})
-        }
-    },
-}
+<script setup>
+    import { defineEmits } from 'vue';
+
+    const emit = defineEmits(['onStart']);
+    function onStart(totalOfBlocks) {  
+        emit('onStart', {totalOfBlocks: totalOfBlocks});      
+    }
 </script>
